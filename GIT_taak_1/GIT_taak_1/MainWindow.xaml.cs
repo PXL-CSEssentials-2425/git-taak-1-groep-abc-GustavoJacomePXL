@@ -16,11 +16,39 @@ namespace GIT_taak_1
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        string redCode = "#FF0000";
+        string greenCode = "#008000";
+        string yellowCode = "#FFFF00";
+        string blueCode = "#0000FF";
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        // Toon de kleurencode als er op een kleur geklikt wordt
+        private void redImage_Click(object sender, RoutedEventArgs e)
+        {
+            codeTextbox.Text = redCode;
+        }
+
+        private void greenImage_Click(object sender, RoutedEventArgs e)
+        {
+            codeTextbox.Text = greenCode;
+        }
+
+        private void yellowImage_Click(object sender, RoutedEventArgs e)
+        {
+            codeTextbox.Text = yellowCode;
+        }
+
+        private void blueImage_Click(object sender, RoutedEventArgs e)
+        {
+            codeTextbox.Text = blueCode;
+        }
+
+        // Verrander de achtergrondkleur naar de corresponderende kleur als de gebruiker er over zweeft met de muis
         private void redImage_MouseEnter(object sender, MouseEventArgs e)
         {
             mainWindow.Background = Brushes.Red;
@@ -41,6 +69,7 @@ namespace GIT_taak_1
             mainWindow.Background = Brushes.Blue;
         }
 
+        // Verander de kleur terug naar lichtgrijs als de gebruiker van de image af gaat met de muis
         private void redImage_MouseLeave(object sender, MouseEventArgs e)
         {
             mainWindow.Background = Brushes.LightGray;
